@@ -1,8 +1,6 @@
 import resolve from 'rollup-plugin-node-resolve';
-import commonjs from 'rollup-plugin-commonjs';
-<% if (buble) { %>
-import buble from 'rollup-plugin-buble';
-<% } %>
+import commonjs from 'rollup-plugin-commonjs';<% if (buble) { %>
+import buble from 'rollup-plugin-buble';<% } %>
 import pkg from './package.json';
 
 export default {
@@ -18,10 +16,8 @@ export default {
       format: 'es'
     }
   ],
-  plugins: [
-    <% if (buble) { %>
-    buble(),
-    <% } %>
+  plugins: [<% if (buble) { %>
+    buble(),<% } %>
     resolve(),
     commonjs()
   ]

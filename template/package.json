@@ -5,29 +5,19 @@
   "module": "dist/<%= name %>.esm.js",
   "jsnext:main": "dist/<%= name %>.esm.js",
   "dependencies": {},
-  "devDependencies": {
-    <% if (unit) { %>
-    "ava": "^0.16.0",
-    <% } %>
-    <% if (lint) { %>
-    "eslint": "^3.7.1",
-    <% } %>
-    "rollup": "^0.50.0",
-    <% if (buble) { %>
-    "rollup-plugin-buble": "^0.18.0",
-    <% } %>
+  "devDependencies": {<% if (unit) { %>
+    "ava": "^0.16.0",<% } %><% if (lint) { %>
+    "eslint": "^3.7.1",<% } %>
+    "rollup": "^0.50.0",<% if (buble) { %>
+    "rollup-plugin-buble": "^0.18.0",<% } %>
     "rollup-plugin-commonjs": "^8.2.6",
     "rollup-plugin-node-resolve": "^3.0.0"
   },
   "scripts": {
     "build": "rollup -c",
-    "dev": "rollup -c -w",
-    <% if (unit) { %>
-    "test": "ava --verbose",
-    <% } %>
-    <% if (lint) { %>
-    "lint": "eslint src{{#unit}} test{{/unit}}"
-    <% } %>
+    "dev": "rollup -c -w",<% if (unit) { %>
+    "test": "ava --verbose",<% } %><% if (lint) { %>
+    "lint": "eslint src<% if (unit) { %> test<% } %>"<% } %>
   },
   "files":[
     "dist"
