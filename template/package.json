@@ -1,5 +1,6 @@
 {
   "name": "<%= name %>",
+  "description": "<%= description %>",
   "version": "1.0.0",
   "main": "dist/<%= name %>.cjs.js",
   "module": "dist/<%= name %>.esm.js",
