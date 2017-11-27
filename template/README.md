@@ -1,15 +1,15 @@
-# {{name}}
+# <%= name %>
 
-> {{description}}
+> <%= description %>
 
 ## Getting started
 
 ```bash
-npm install {{ name }}
+npm install <%= name %>
 ```
 
 or
 
 ```bash
-yarn add {{ name }}
+yarn add <%= name %>
 ```

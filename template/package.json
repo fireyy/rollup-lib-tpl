@@ -1,33 +1,33 @@
 {
-  "name": "{{ name }}",
+  "name": "<%= name %>",
   "version": "1.0.0",
-  "main": "dist/{{ name }}.cjs.js",
-  "module": "dist/{{ name }}.esm.js",
-  "jsnext:main": "dist/{{ name }}.esm.js",
+  "main": "dist/<%= name %>.cjs.js",
+  "module": "dist/<%= name %>.esm.js",
+  "jsnext:main": "dist/<%= name %>.esm.js",
   "dependencies": {},
   "devDependencies": {
-    {{#unit}}
+    <% if (unit) { %>
     "ava": "^0.16.0",
-    {{/unit}}
-    {{#lint}}
+    <% } %>
+    <% if (lint) { %>
     "eslint": "^3.7.1",
-    {{/lint}}
+    <% } %>
     "rollup": "^0.50.0",
-    {{#buble}}
+    <% if (buble) { %>
     "rollup-plugin-buble": "^0.18.0",
-    {{/buble}}
+    <% } %>
     "rollup-plugin-commonjs": "^8.2.6",
     "rollup-plugin-node-resolve": "^3.0.0"
   },
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
-    {{#unit}}
+    <% if (unit) { %>
     "test": "ava --verbose",
-    {{/unit}}
-    {{#lint}}
+    <% } %>
+    <% if (lint) { %>
     "lint": "eslint src{{#unit}} test{{/unit}}"
-    {{/lint}}
+    <% } %>
   },
   "files":[
     "dist"
