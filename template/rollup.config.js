@@ -5,14 +5,14 @@ import pkg from './package.json';
 
 export default {
   input: 'src/index.js',
-  targets: [
+  output: [
     {
-      dest: pkg.main,
+      file: pkg.main,
       format: 'umd',
-      moduleName: '<%= name %>'
+      name: '<%= name %>'
     },
     {
-      dest: pkg.module,
+      file: pkg.module,
       format: 'es'
     }
   ],
