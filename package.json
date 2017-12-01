@@ -1,0 +1,9 @@
+{
+  "name": "rollup-lib-tpl",
+  "version": "0.0.1",
+  "description": "Scaffold out an rollup based lib template",
+  "dependencies": {
+    "camelcase": "^4.1.0"
+  },
+  "devDependencies": {}
+}

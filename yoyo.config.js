@@ -1,3 +1,4 @@
+var camelCase = require('camelcase')
 module.exports = {
   prompts: {
     name: {
@@ -19,6 +20,11 @@ module.exports = {
     lint: {
       type: 'confirm',
       message: 'Use ESLint to lint your code?'
+    }
+  },
+  data(answers) {
+    return {
+      moduleName: camelCase(answers.name)
     }
   },
   "filters": {
