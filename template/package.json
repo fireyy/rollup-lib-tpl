@@ -2,6 +2,7 @@
   "name": "<%= name %>",
   "description": "<%= description %>",
   "version": "1.0.0",
+  "browser": "dist/<%= name %>.umd.js",
   "main": "dist/<%= name %>.cjs.js",
   "module": "dist/<%= name %>.esm.js",
   "jsnext:main": "dist/<%= name %>.esm.js",
