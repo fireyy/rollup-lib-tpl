@@ -19,7 +19,7 @@ module.exports = {
     },
     lint: {
       type: 'confirm',
-      message: 'Use ESLint to lint your code?'
+      message: 'Use XO to lint your code?'
     }
   },
   data(answers) {

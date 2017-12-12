@@ -1,7 +1,7 @@
 {
   "name": "<%= name %>",
   "description": "<%= description %>",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "browser": "dist/<%= name %>.umd.js",
   "main": "dist/<%= name %>.cjs.js",
   "module": "dist/<%= name %>.esm.js",
@@ -10,7 +10,8 @@
   "devDependencies": {<% if (unit) { %>
     "ava": "^0.16.0",<% } %>
     "cross-env": "^5.1.1",<% if (lint) { %>
-    "eslint": "^3.7.1",<% } %>
+    "xo": "^0.18.2",
+    "eslint-config-fireyy": "^0.0.1",<% } %>
     "rollup": "^0.50.0",<% if (buble) { %>
     "rollup-plugin-buble": "^0.18.0",<% } %>
     "rollup-plugin-commonjs": "^8.2.6",
@@ -23,10 +24,13 @@
     "bump": "standard-version",
     "dev": "cross-env NODE_ENV=development rollup -c -w",<% if (unit) { %>
     "test": "ava --verbose",<% } %><% if (lint) { %>
-    "lint": "eslint src<% if (unit) { %> test<% } %>",<% } %>
+    "lint": "xo",<% } %>
     "minify": "uglifyjs $npm_package_main -cm -o $npm_package_main --source-map base=${npm_package_main}.map",
     "release": "npm run build && npm run minify && npm run bump && git push --follow-tags origin master && npm publish"
-  },
+  },<% if (lint) { %>
+  "xo": {
+    "extends": "fireyy/prettier"
+  },<% } %>
   "files":[
     "dist"
   ]
