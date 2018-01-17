@@ -11,7 +11,7 @@
     "ava": "^0.16.0",<% } %>
     "cross-env": "^5.1.1",<% if (lint) { %>
     "xo": "^0.18.2",
-    "eslint-config-fireyy": "^0.0.1",<% } %>
+    "eslint-config-fireyy": "^1.0.0",<% } %>
     "rollup": "^0.50.0",<% if (buble) { %>
     "rollup-plugin-buble": "^0.18.0",<% } %>
     "rollup-plugin-commonjs": "^8.2.6",
